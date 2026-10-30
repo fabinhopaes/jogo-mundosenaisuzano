@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f6f8">
+    <title>Genius de Cores | Mundo SENAI</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page-shell">
+        <header class="brand" aria-label="Mundo SENAI">
+            <span class="brand__world">MUNDO</span>
+            <span class="brand__senai">SENAI</span>
+        </header>
+
+        <section class="game" aria-labelledby="game-title">
+            <div class="game__heading">
+                <div>
+                    <p class="eyebrow">DESAFIO DE MEMÓRIA</p>
+                    <h1 id="game-title">Genius de cores</h1>
+                </div>
+                <div class="game__tools">
+                    <label class="difficulty-control" for="difficulty-select">
+                        <span class="difficulty-control__label">DIFICULDADE</span>
+                        <select id="difficulty-select" aria-label="Selecionar dificuldade">
+                            <option value="facil">Fácil</option>
+                            <option value="medio" selected>Médio</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </label>
+                    <button class="button button--secondary theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Ativar tema escuro">
+                        <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+                        <span id="theme-label">Tema escuro</span>
+                    </button>
+                    <button class="button button--secondary sound-toggle" id="sound-toggle" type="button" aria-pressed="true" aria-label="Desativar sons">
+                        <span class="sound-toggle__icon" aria-hidden="true">♫</span>
+                        <span id="sound-label">Som ligado</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="scoreboard" aria-label="Placar">
+                <div class="scoreboard__item">
+                    <span class="scoreboard__label">RODADA</span>
+                    <strong class="scoreboard__value" id="round-value">00</strong>
+                </div>
+                <div class="scoreboard__divider" aria-hidden="true"></div>
+                <div class="scoreboard__item">
+                    <span class="scoreboard__label">RECORDE</span>
+                    <strong class="scoreboard__value" id="best-value">00</strong>
+                </div>
+                <div class="scoreboard__divider" aria-hidden="true"></div>
+                <div class="scoreboard__item scoreboard__item--status">
+                    <span class="scoreboard__label">SUA VEZ</span>
+                    <strong class="scoreboard__status" id="status" role="status" aria-live="polite">Pronto para jogar?</strong>
+                </div>
+            </div>
+
+            <div class="board-wrap">
+                <div class="board" id="board" aria-label="Painel circular de quatro cores">
+                    <button class="pad pad--red" type="button" data-color="0" aria-label="Vermelho, tecla 1" disabled><span class="pad__key">1</span></button>
+                    <button class="pad pad--green" type="button" data-color="1" aria-label="Verde, tecla 2" disabled><span class="pad__key">2</span></button>
+                    <button class="pad pad--blue" type="button" data-color="2" aria-label="Azul, tecla 3" disabled><span class="pad__key">3</span></button>
+                    <button class="pad pad--yellow" type="button" data-color="3" aria-label="Amarelo, tecla 4" disabled><span class="pad__key">4</span></button>
+                    <button class="board__hub" id="hub-start" type="button" aria-label="Iniciar jogo">INICIAR</button>
+                </div>
+            </div>
+
+            <div class="game__footer">
+                <p class="game__message" id="game-message">Memorize a sequência e repita na mesma ordem.</p>
+                <button class="button button--primary" id="start-button" type="button">
+                    <span aria-hidden="true">▶</span>
+                    <span>Começar jogo</span>
+                </button>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <span>UM DESAFIO MUNDO SENAI</span>
+            <span>TD52 - FEITO POR FÁBIO H., GUILHERME L., LUCAS C. E MARIANA C.</span>
+        </footer>
+    </main>
+</body>
+</html>
