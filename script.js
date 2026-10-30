@@ -1,5 +1,4 @@
 const botoesCor = [...document.querySelectorAll(".pad")];
-const botaoInicio = document.querySelector("#start-button");
 const botaoCentro = document.querySelector("#hub-start");
 const botaoSom = document.querySelector("#sound-toggle");
 const etiquetaSom = document.querySelector("#sound-label");
@@ -57,7 +56,6 @@ function atualizarControles() {
 		botao.disabled = !podeResponder;
 	});
 	seletorDificuldade.disabled = jogoAtivo;
-	botaoInicio.disabled = jogoAtivo;
 	botaoCentro.disabled = jogoAtivo;
 }
 
@@ -153,7 +151,6 @@ function encerrarJogo() {
 	estado.textContent = "Fim de jogo";
 	mensagem.className = "game__message is-error";
 	mensagem.textContent = `Não foi dessa vez. Você concluiu ${Math.max(0, sequencia.length - 1)} rodadas.`;
-	botaoInicio.innerHTML = '<span aria-hidden="true">↻</span><span>Tentar novamente</span>';
 	botaoCentro.textContent = "REINICIAR";
 	botaoCentro.dataset.state = "restart";
 	botaoCentro.setAttribute("aria-label", "Reiniciar jogo");
@@ -192,7 +189,6 @@ function iniciarJogo() {
 	sequencia = [];
 	indiceJogador = 0;
 	jogoAtivo = true;
-	botaoInicio.innerHTML = '<span aria-hidden="true">●</span><span>Jogo em andamento</span>';
 	botaoCentro.textContent = "MS";
 	botaoCentro.dataset.state = "playing";
 	botaoCentro.setAttribute("aria-label", "Jogo em andamento");
@@ -238,7 +234,6 @@ document.addEventListener("keydown", (evento) => {
 	if (tecla >= 1 && tecla <= 4) responder(tecla - 1);
 });
 
-botaoInicio.addEventListener("click", iniciarJogo);
 botaoCentro.addEventListener("click", iniciarJogo);
 botaoTema.addEventListener("click", alternarTema);
 botaoSom.addEventListener("click", () => {

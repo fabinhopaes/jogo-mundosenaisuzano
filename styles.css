@@ -97,9 +97,9 @@ button, select { font: inherit; }
 h1 {
     margin: 0;
     color: var(--text);
-    font-size: 48px;
+    font-size: 54px;
     font-weight: 700;
-    line-height: 60px;
+    line-height: 1.15;
 }
 
 .game__tools {
@@ -158,7 +158,7 @@ h1 {
 
 .scoreboard {
     display: grid;
-    grid-template-columns: 90px 1px 90px 1px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) 1px minmax(0, 1fr);
     align-items: center;
     gap: 20px;
     margin-top: 22px;
@@ -167,7 +167,7 @@ h1 {
     background: var(--panel);
 }
 
-.scoreboard__item { display: flex; flex-direction: column; gap: 3px; }
+.scoreboard__item { display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
 .scoreboard__label { color: var(--muted); font-size: 9px; }
 .scoreboard__value { color: var(--action-text); font-size: 23px; line-height: 1.15; }
 .scoreboard__status { overflow: hidden; color: var(--text); font-size: 13px; font-weight: 600; line-height: 1.4; text-overflow: ellipsis; }
@@ -178,7 +178,7 @@ h1 {
 .board {
     position: relative;
     display: grid;
-    width: min(100%, 334px);
+    width: min(100%, 370px);
     aspect-ratio: 1;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 10px;
@@ -243,8 +243,9 @@ h1 {
 }
 :root[data-theme="dark"] .board__hub[data-state="restart"]:hover:not(:disabled) { background: #8a3942; }
 
-.game__footer { padding-top: 17px; border-top: 1px solid var(--line); }
+.game__footer { justify-content: center; padding-top: 17px; border-top: 1px solid var(--line); }
 .game__message { min-height: 19px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.game__footer .game__message { text-align: center; }
 .game__message.is-error { color: var(--error); font-weight: 700; }
 .game__message.is-success { color: var(--action-text); font-weight: 700; }
 .page-footer { display: flex; justify-content: space-between; gap: 12px; padding: 15px 2px 0; color: var(--muted); font-size: 9px; }
@@ -264,16 +265,15 @@ h1 {
     .game { padding: 22px 18px 20px; }
     .game__heading { flex-direction: column; }
     .game__tools { width: 100%; max-width: none; justify-content: space-between; gap: 6px; }
-    h1 { font-size: 34px; line-height: 38px; }
+    h1 { font-size: 38px; line-height: 1.15; }
     .game__tools .button { min-height: 36px; gap: 6px; padding: 0 8px; font-size: 10px; }
     .difficulty-control select { min-width: 82px; min-height: 36px; padding: 0 17px 0 8px; font-size: 10px; }
-    .scoreboard { grid-template-columns: 56px 1px 56px 1px minmax(0, 1fr); gap: 11px; padding: 13px 10px; }
+    .scoreboard { grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr) 1px minmax(0, 1fr); gap: 8px; padding: 13px 10px; }
     .scoreboard__value { font-size: 20px; }
     .scoreboard__status { font-size: 11px; }
-    .board { width: min(100%, 290px); gap: 8px; padding: 8px; }
+    .board { width: min(100%, 310px); gap: 8px; padding: 8px; }
     .board__hub { width: 65px; }
-    .game__footer { align-items: flex-start; flex-direction: column; gap: 12px; }
-    .game__footer .button { width: 100%; }
+    .game__footer { align-items: center; }
     .page-footer { flex-wrap: wrap; font-size: 8px; }
 }
 
